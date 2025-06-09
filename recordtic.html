@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Match History</title>
+  <link rel="stylesheet" href="styletic.css">
+</head>
+<body>
+  <div class="navbar">
+    <a href="hometic.html" class="logo">🎮 Tic-Tac-Toe Arena</a>
+    <div class="user-info">👤 <span id="username-display"></span></div>
+  </div>
+
+  <div class="game-container">
+    <h1>📜 Match History</h1>
+    <ul id="history-list"></ul>
+    <button onclick="window.location.href='hometic.html'">Back to Home</button>
+  </div>
+
+  <script src="scripttic.js"></script>
+  <script>
+    const list = document.getElementById('history-list');
+    const history = JSON.parse(localStorage.getItem('matchHistory') || '[]');
+    if (history.length === 0) {
+      list.innerHTML = '<li>No matches played yet.</li>';
+    } else {
+      history.forEach(h => {
+        const li = document.createElement('li');
+        li.textContent = `${h.result} on ${h.time}`;
+        list.appendChild(li);
+      });
+    }
+  </script>
+</body>
+</html>

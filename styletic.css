@@ -1,0 +1,131 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #7322be;
+  color: white;
+  margin: 0;
+  padding-top: 70px; /* Space for fixed navbar */
+  text-align: center;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #1e1e1e;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #444;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar .user-info {
+  font-size: 1em;
+  color: #ccc;
+}
+
+.title {
+  font-size: 2.5em;
+  margin-top: 0.5em;
+}
+
+.tagline {
+  font-size: 1.2em;
+  color: #ccc;
+}
+
+.description, .game-modes {
+  margin: 40px auto;
+  max-width: 600px;
+}
+
+.btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 15px 25px;
+  background: #0077cc;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #005fa3;
+}
+
+.game-container {
+  display: inline-block;
+  background: #1e1e1e;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+  margin-top: 20px;
+}
+
+.board {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 10px;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background: #333;
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 10px;
+  transition: background 0.3s;
+  color: #00e5ff;
+}
+
+.cell:hover {
+  background: #444;
+}
+
+.winning-line {
+  position: absolute;
+  background: red;
+  height: 5px;
+  border-radius: 2px;
+  transform-origin: center;
+  animation: lineAppear 0.4s ease-out;
+}
+
+@keyframes lineAppear {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.status {
+  margin: 15px 0;
+  font-size: 1.3em;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
